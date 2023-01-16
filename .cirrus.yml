@@ -9,6 +9,7 @@ task:
   install_script:
     - ASSUME_ALWAYS_YES=yes pkg bootstrap -f
     - pkg install -y git
-    - portsnap auto
+    - portsnap auto > /tmp/portsnap-auto.log
   script:
-    - find .
+    - cp -R ports/games/stockfish/* /usr/ports/games/stockfish
+    - cd /usr/ports/games/stockfish && make
