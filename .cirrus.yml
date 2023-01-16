@@ -8,8 +8,8 @@ task:
   timeout_in: 120m
   install_script:
     - pkg info
-    - pkg remove -y curl
-# above: remove curl/wget since they are not expected to be there by default
+    - pkg remove -y -a
+# above: remove all packages from the system except pkg to have a clean build machine
 #    - portsnap auto > /tmp/portsnap-auto.log
   script:
     - cp -R ports/games/stockfish/* /usr/ports/games/stockfish
