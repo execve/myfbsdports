@@ -5,10 +5,9 @@ freebsd_instance:
   image_family: freebsd-13-1
 
 task:
-  timeout_in: 60m
+  timeout_in: 120m
   install_script:
-    - ASSUME_ALWAYS_YES=yes pkg bootstrap -f
-    - pkg install -y git
+    - ls /usr/ports
     - portsnap auto > /tmp/portsnap-auto.log
   script:
     - cp -R ports/games/stockfish/* /usr/ports/games/stockfish
