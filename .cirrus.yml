@@ -7,8 +7,8 @@ freebsd_instance:
 task:
   timeout_in: 120m
   install_script:
-    - ls /usr/ports
-    - portsnap auto > /tmp/portsnap-auto.log
+    - pkg info
+#    - portsnap auto > /tmp/portsnap-auto.log
   script:
     - cp -R ports/games/stockfish/* /usr/ports/games/stockfish
     - cd /usr/ports/games/stockfish && make
