@@ -13,7 +13,7 @@ WWW=		https://www.stockfishchess.com/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../Copying.txt
 
-BUILD_DEPENDS=	curl:ftp/curl
+BINARY_ALIAS=	wget=true
 USES=		compiler:c++11-lang gmake perl5
 USE_GITHUB=	yes
 GH_ACCOUNT=	official-stockfish
