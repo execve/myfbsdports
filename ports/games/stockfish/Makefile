@@ -13,7 +13,6 @@ WWW=		https://www.stockfishchess.com/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../Copying.txt
 
-BINARY_ALIAS=	wget=true
 USES=		compiler:c++11-lang gmake perl5
 USE_GITHUB=	yes
 GH_ACCOUNT=	official-stockfish
@@ -27,6 +26,8 @@ MAKE_ARGS=	ARCH=${MYARCH} \
 ALL_TARGET=	build
 
 _NNUE_VER=	ad9b42354671
+
+BINARY_ALIAS=	wget=true
 
 WRKSRC_SUBDIR=	src
 
