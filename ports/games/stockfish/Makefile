@@ -2,8 +2,10 @@ PORTNAME=	stockfish
 DISTVERSIONPREFIX=	sf_
 DISTVERSION=	16.1
 CATEGORIES=	games
-MASTER_SITES=	https://tests.stockfishchess.org/api/nn/:nnue1 https://tests.stockfishchess.org/api/nn/:nnue2
-DISTFILES=	nn-${_NNUE1_VER}.nnue:nnue1 nn-${_NNUE2_VER}.nnue:nnue2
+MASTER_SITES=	https://tests.stockfishchess.org/api/nn/:nnue1 \
+		https://tests.stockfishchess.org/api/nn/:nnue2
+DISTFILES=	nn-${_NNUE1_VER}.nnue:nnue1 \
+		nn-${_NNUE2_VER}.nnue:nnue2
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	execve@gmail.com
