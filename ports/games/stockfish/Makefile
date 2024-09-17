@@ -10,7 +10,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	execve@gmail.com
 COMMENT=	Open source chess engine
-WWW=		https://www.stockfishchess.com/
+WWW=		https://www.stockfishchess.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../Copying.txt
