@@ -14,4 +14,4 @@ task:
     - git clone --depth 1 https://github.com/freebsd/freebsd-ports.git /usr/ports
   script:
     - cp -R ports/games/stockfish/* /usr/ports/games/stockfish
-    - cd /usr/ports/games/stockfish && make
+    - cd /usr/ports/games/stockfish && make BATCH=yes
