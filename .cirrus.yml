@@ -10,7 +10,7 @@ task:
     - pkg info
     - pkg remove -y -a
 # above: remove all packages from the system except pkg to have a clean build machine
-    - pkg add portsnap -y
+    - pkg install portsnap -y
     - portsnap auto > /tmp/portsnap-auto.log
   script:
     - cp -R ports/games/stockfish/* /usr/ports/games/stockfish
