@@ -12,7 +12,6 @@ task:
 # above: remove all packages from the system except pkg to have a clean build machine
     - pkg install -y git
     - git clone --depth 1 https://github.com/freebsd/freebsd-ports.git /usr/ports
-    - cd /usr/ports && git pull && make index && cd -
   script:
     - cp -R ports/games/stockfish/* /usr/ports/games/stockfish
     - cd /usr/ports/games/stockfish && make
