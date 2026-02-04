@@ -2,7 +2,7 @@ env:
   ARCH: amd64
 
 freebsd_instance:
-  image_family: freebsd-14-2
+  image_family: freebsd-14-3
 
 task:
   timeout_in: 120m
