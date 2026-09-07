@@ -11,7 +11,7 @@ jobs:
     steps:
       # Step 1: Check out your repository code (standard practice)
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # Step 2: Boot FreeBSD inside QEMU and execute the port compilation
       - name: Build Port inside FreeBSD VM
