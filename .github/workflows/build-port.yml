@@ -1,10 +1,6 @@
 name: Build FreeBSD Port (games/stockfish)
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
   workflow_dispatch: # Allows you to trigger the build manually from the GitHub UI
 
 jobs:
