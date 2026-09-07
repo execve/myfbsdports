@@ -33,7 +33,7 @@ jobs:
             
             echo "=== Fetching FreeBSD Ports Tree ==="
             # Clone a shallow copy of the ports tree to keep execution fast
-            git clone --depth 1 https://cgit.freebsd.org/ports/ /usr/ports
+            git clone --depth 1 https://github.com/freebsd/freebsd-ports.git /usr/ports
             
             echo "=== Copying games/stockfish Port files ==="
             cp -rv ports/games/stockfish/. /usr/ports/games/stockfish/.
