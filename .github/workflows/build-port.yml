@@ -42,7 +42,7 @@ jobs:
             cd /usr/ports/games/stockfish
             
             # BATCH=yes bypasses the interactive dialog menus so the CI doesn't hang
-            make BATCH=yes FETCH_BEFORE_ARGS=yes
+            make BATCH=yes # FETCH_BEFORE_ARGS=yes
             
             echo "=== Staging Port Check ==="
             make stage BATCH=yes
