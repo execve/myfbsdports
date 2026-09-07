@@ -1,0 +1,49 @@
+name: Build FreeBSD Port (games/stockfish)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch: # Allows you to trigger the build manually from the GitHub UI
+
+jobs:
+  build_port:
+    # Runs on GitHub's free standard Ubuntu runner
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out your repository code (standard practice)
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Step 2: Boot FreeBSD inside QEMU and execute the port compilation
+      - name: Build Port inside FreeBSD VM
+        uses: vmactions/freebsd-vm@v1
+        with:
+          usesh: true
+          # prepare runs before the primary script; installs system management packages
+          prepare: |
+            pkg update
+            pkg install -y git-lite
+          # run executes the actual shell steps natively inside the virtualized FreeBSD OS
+          run: |
+            echo "=== Verifying Operating System ==="
+            uname -a
+            
+            echo "=== Fetching FreeBSD Ports Tree ==="
+            # Clone a shallow copy of the ports tree to keep execution fast
+            git clone --depth 1 https://freebsd.org /usr/ports
+            
+            echo "=== Copying games/stockfish Port files ==="
+            cp -rv ports/games/stockfish/. /usr/ports/games/stockfish/.
+
+            echo "=== Building games/stockfish Port ==="
+            cd /usr/ports/games/stockfish
+            
+            # BATCH=yes bypasses the interactive dialog menus so the CI doesn't hang
+            make BATCH=yes FETCH_BEFORE_ARGS=yes
+            
+            echo "=== Staging Port Check ==="
+            make stage BATCH=yes
+
