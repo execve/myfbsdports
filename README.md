@@ -1,5 +1,5 @@
 # myfbsdports
 FreeBSD ports
 
-* cirrus-ci configured to automatically build games/stockfish
-cirrus-ci.com
+* gh action configured to build games/stockfish on demand
+* Workflow needs to be manually triggered.
